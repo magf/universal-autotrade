@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+# Reload systemd to pick up the new service file
+systemctl daemon-reload
+
+# Enable and start the default BTCUSDT trading service
+systemctl enable universal-autotrade@BTCUSDT
+systemctl start universal-autotrade@BTCUSDT
+echo "Started universal-autotrade@BTCUSDT service"
+
+exit 0

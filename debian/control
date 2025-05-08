@@ -1,0 +1,6 @@
+Package: universal-autotrade
+Version: 1.0
+Architecture: amd64
+Maintainer: Maxim Gajdaj <maxim.gajdaj@gmail.com>
+Description: Universal Autotrade Service
+ A modular trading system that collects market data, processes trading signals, and executes orders on cryptocurrency exchanges.

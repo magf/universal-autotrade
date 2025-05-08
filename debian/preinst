@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+# Create the autotrade user if it doesn't exist
+if ! id -u autotrade >/dev/null 2>&1; then
+    useradd -r -s /bin/false -d /nonexistent autotrade
+    echo "Created user autotrade"
+fi
+
+# Create the data directory if it doesn't exist
+if [ ! -d /var/lib/universal-autotrade ]; then
+    mkdir -p /var/lib/universal-autotrade
+    chown autotrade:autotrade /var/lib/universal-autotrade
+    chmod 755 /var/lib/universal-autotrade
+    echo "Created directory /var/lib/universal-autotrade"
+fi
+
+exit 0
